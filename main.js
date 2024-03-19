@@ -49,6 +49,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 yellowTape.remove();
                 // Restaura el desplazamiento de la página
                 document.body.style.overflow = "auto";
+
+                // Muestra los elementos ocultos
+                var hiddenContent = document.querySelectorAll('.content.hidden');
+                hiddenContent.forEach(function(item) {
+                    item.classList.remove('hidden');
+                });
             }
         }
 
