@@ -14,6 +14,7 @@
 body{
     background-color: rgba(255, 255, 255, 0);
     font-family:"Montserrat" ;
+    cursor: url(cursor.png), auto;
 }
 
 header{
@@ -142,7 +143,7 @@ a:hover:after{
 }
 
 .red-button img{
-    cursor: pointer;
+    cursor: url(cursor.png), pointer;
 }
 
 

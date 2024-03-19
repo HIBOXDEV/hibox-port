@@ -5,3 +5,16 @@ var typed = new Typed(".autotype",{
     loop: true,
     
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    var redButton = document.querySelector(".red-button");
+    var audio = document.getElementById("audio");
+    var clicked = false;
+
+    redButton.addEventListener("click", function() {
+        if (!clicked) {
+            audio.play();
+            clicked = true;
+        }
+    });
+});
