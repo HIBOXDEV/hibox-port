@@ -1,11 +1,3 @@
-var typed = new Typed(".autotype",{
-    strings: ["Web Developer" , "I am 16 years old" ] ,
-    typeSpeed: 50,
-    backSpeed: 50,
-    loop: true,
-    
-});
-
 document.addEventListener("DOMContentLoaded", function() {
     var redButton = document.querySelector(".red-button");
     var audio = document.getElementById("audio");
@@ -22,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
             // Espera 2 segundos antes de ejecutar la segunda función
             setTimeout(function() {
                 animateYellowTape();
-            }, 2000);
+            }, 1000);
         }
     });
 
@@ -30,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var yellowTape = document.querySelector(".yellow-tape");
         var audio = document.getElementById("audioo");
 
-        var duration = 100; // Duración de la animación en milisegundos (10 segundos)
+        var duration = 500; // Duración de la animación en milisegundos (10 segundos)
         var startTime = performance.now(); // Tiempo de inicio de la animación
 
         function animate() {
@@ -64,6 +56,11 @@ document.addEventListener("DOMContentLoaded", function() {
         // Inicia la animación
         animate();
     }
+
+    // Función para redirigir al inicio cuando se recarga la página
+    window.addEventListener("beforeunload", function(event) {
+        window.scrollTo(0, 0);
+    });
 });
 
 function updateClock() {
