@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
         var yellowTape = document.querySelector(".yellow-tape");
         var audio = document.getElementById("audioo");
 
-        var duration = 10000; // Duración de la animación en milisegundos (10 segundos)
+        var duration = 100; // Duración de la animación en milisegundos (10 segundos)
         var startTime = performance.now(); // Tiempo de inicio de la animación
 
         function animate() {
@@ -65,3 +65,23 @@ document.addEventListener("DOMContentLoaded", function() {
         animate();
     }
 });
+
+function updateClock() {
+    const now = new Date(); // Obtiene la fecha y hora actual
+    let hours = now.getHours();
+    let minutes = now.getMinutes();
+
+    // Formatea las horas y minutos para asegurar que siempre tengan dos dígitos
+    hours = hours < 10 ? '0' + hours : hours;
+    minutes = minutes < 10 ? '0' + minutes : minutes;
+
+    // Construye la cadena de tiempo y la muestra en el elemento con id 'custom'
+    const timeString = hours + ':' + minutes;
+    document.getElementById('custom').textContent = timeString;
+}
+
+// Actualiza el reloj inmediatamente al cargar la página
+updateClock();
+
+// Establece el intervalo para actualizar el reloj cada segundo (1000 milisegundos)
+setInterval(updateClock, 1000);
