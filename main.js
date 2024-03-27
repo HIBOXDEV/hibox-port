@@ -93,3 +93,19 @@ updateClock();
 
 // Establece el intervalo para actualizar el reloj cada segundo (1000 milisegundos)
 setInterval(updateClock, 1000);
+
+
+function cambiarFondo(src) {
+    var contenedor = document.getElementById('contenedor');
+    contenedor.style.backgroundImage = "url('" + src + "')";
+
+    // Desactivar todos los botones primero
+    var botones = document.querySelectorAll('.boton');
+    botones.forEach(function(boton) {
+      boton.classList.remove('activo');
+    });
+
+    // Activar el botón correspondiente a la imagen seleccionada
+    var botonActivo = document.querySelector("button[data-src='" + src + "']");
+    botonActivo.classList.add('activo');
+  }
